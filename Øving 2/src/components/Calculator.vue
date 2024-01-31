@@ -73,128 +73,117 @@ export default {
             { value: '+' },
 
             { value: '0' },
+            { value: '(' },
+            { value: ')' },
             { value: '=' },
 
 
         ];
       // Array of the log
-    const log = [];
+        const log = [];
       // Function to update display based on button click
       // When the user clicks =, then the eval function is able to calculate the display.value
       // If not then the value of the button clicked is added to the display (not very smart system)
-    function updateDisplay(value) {
-        if (value === '=') {
-            log.push(display.value + '=' + eval(display.value) )
-            return display.value = eval(display.value);
+      // The eval() function evaluates JavaScript code represented as a string and returns its completion value. 
+      // The source is parsed as a script.
+        function updateDisplay(value) {
+            if (value === '=') {
+                try {
+                    log.push(display.value + '=' + eval(display.value) )
+                    return display.value = eval(display.value);
+                } catch(SyntaxError) {
+                    alert('ERROR ERROR ERROR')
+                } finally {
+                    console.log('Easter egg');
+                }
+            }
+            if (value === 'AC') {
+                return display.value = ''
+            }
+            if (value === '%') {
+                return display.value /= 100
+            }
+            display.value += value;
         }
-        if (value === 'AC') {
-            return display.value = ''
-        }
-        display.value += value;
-    }
       // Return data and functions for the component
-    return {
-        display,
-        buttons,
-        log,
-        updateDisplay,
-    };
-},};
+        return {
+            display,
+            buttons,
+            log,
+            updateDisplay,
+        };
+    },
+};
 
 </script>
 
 <style>
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-}
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
 
-.calculator {
-    max-width: 360px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
+    .calculator {
+        max-width: 360px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+    }
 
-.display {
-    width: 100%;
-    height: 56px;
-    font-size: 20px;
-    text-align: right;
-    margin-bottom: 10px;
-    padding: 20px;
-    border-radius: 5px;
-    color: #333; /* Set text color */
-    background-color: #f8f8f8; /* Set background color */
-    border: 1px solid #ccc; /* Add a border */
-    box-sizing: border-box;
-}
+    .display {
+        width: 100%;
+        height: 56px;
+        font-size: 20px;
+        text-align: left;
+        margin-bottom: 10px;
+        padding: 20px;
+        border-radius: 5px;
+        color: #333;
+        background-color: #f8f8f8; 
+        border: 1px solid #ccc; 
+        box-sizing: border-box;
+    }
 
-.buttons {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-between;
-}
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: space-between;
+    }
 
-.button {
-    width: calc(100% / 5);
-    height: 60px;
-    margin: 10px 5px;
-    border-radius: 10px;
-    background-color: #819182; /* Set button background color */
-    color: #ffffff; /* Set button text color */
-    font-size: 18px;
-    cursor: pointer;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-}
+    .button {
+        width: 20%;
+        height: 60px;
+        margin: 10px 1px;
+        border-radius: 10px;
+        background-color: #819182; 
+        color: #ffffff; 
+        font-size: 18px;
+        cursor: pointer;
+        border: none;
+        align-items: center;
+        justify-content: center;
+    }
 
-.button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
-}
+    .button:hover {
+        transform: translateY(-7px);
+    }
 
-.button:focus {
-    outline: none;
-}
+    .log {
+        margin-top: 20px;
+        color: #333;
+    }
 
-/* Add styles for the log section */
-.log {
-    margin-top: 20px;
-}
-
-.log h2 {
-    color: #333;
-}
-
-.log ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.log li {
-    margin-bottom: 5px;
-    padding: 5px;
-    background-color: #ddd;
-    border-radius: 5px;
-}
-
-footer {
-    margin-top: 15px;
-    font-size: 18px;
-    color: #333;
-    text-align: center;
-}
+    footer {
+        margin-top: 15px;
+        font-size: 18px;
+        color: #333;
+        text-align: center;
+    }
 </style>
