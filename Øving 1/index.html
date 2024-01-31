@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Website101</title>
+</head>
+<body>
+
+    <header class="site-header">
+        <h1>
+            Wizsite<img src="images/wizard101.png" alt="Logo" class="logo">
+        </h1>
+        <link rel="stylesheet" href="styles.css">
+    </header>
+
+    <nav class="site-navigation">
+        <ul class="navigation-link">
+            <li><a href="#">Hjem</a></li>
+            <li><a href="#">Om oss</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <div class="flex-container">
+        <img id="image1" style.display = 'blocked' src="images/legoHarryPotter.jpeg" alt="Harry Potter Meme #1">
+        <img id="image2" src="images/harryPottermeme2.webp" alt="Harry Potter Meme #2">
+        <img id="image3" src="images/harrypottermeme3.jpeg" alt="Harry Potter Meme #3">
+        <img id="image4" src="images/harrypottermeme4.webp" alt="Harry Potter Meme #4">
+        <img id="image5" src="images/harrypottermeme5.jpeg" alt="Harry Potter Meme #5">
+        <img id="image6" src="images/harrymottermeme6.jpeg" alt="Harry Potter Meme #5">
+        <img id="image7" src="images/harrypottermeme7.jpeg" alt="Harry Potter Meme #5">
+    </div>
+
+    <section class="content-block">
+        <button onclick="buttonClick()" class="button">Increment</button>
+        <h1 class="increment"><output type="text" id="inc" value="0">0</output></h1>
+
+        <button onclick="toggleImage()" class="button">Hide/Show</button>
+        <button onclick="generateSpells()" class="button">Give Spells</button>
+        <li id="keyword-list" class="keyword-list"></li>
+    </section>
+
+    <footer class="site-footer">
+        <p>&copy; 2024 Andreas Kluge Svendsrud. Alle rettigheter reservert.</p>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

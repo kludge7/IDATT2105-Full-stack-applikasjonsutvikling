@@ -1,0 +1,124 @@
+@import url('https://fonts.cdnfonts.com/css/shermlock');
+
+.site-header {
+    background-image: url(images/stars.jpeg);
+    color: rgb(223, 176, 0);
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'shermlockOpen', sans-serif;
+
+    margin-top: -8px;
+    margin-bottom: 0px;
+    margin-right: -8px;
+    margin-left: -8px;
+
+    padding-top: 20px;
+    padding-right: 0px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+}
+
+.site-header, .site-navigation, .main-content, .site-footer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.logo {
+    max-width: 100px;
+}
+
+.site-navigation {
+    background-image: url(images/stars.jpeg);
+
+    margin-top: -8px;
+    margin-bottom: 0px;
+    margin-right: -8px;
+    margin-left: -8px;
+
+    padding-top: 20px;
+    padding-right: px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+}
+
+.navigation-link {
+    color: rgb(0, 0, 0);
+    font-size: xx-large;
+    font-family: 'shermlock', sans-serif;
+    text-decoration: double;
+
+    margin-left: 75px; 
+}
+
+.flex-container {
+    float:right;
+    display: flex;
+    margin-top: -248px;
+    position: relative;
+    left: 318px;
+}
+
+.flex-container img {
+    max-width: 11.2%;
+}
+
+.content-block {
+    background-image: url(images/marioGalaxy.jpeg);
+    background-size: cover;
+    margin-right: -8px;
+    margin-left: -8px;
+
+    padding: 1em;
+    text-align: center;
+}
+
+.button {
+    background-color: black;
+    color: rgb(223, 176, 0);
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'shermlock', sans-serif;
+}
+
+.button:hover {
+    background-color: #45a049; 
+    cursor: pointer
+}
+
+.increment {
+    color: rgb(223, 0, 0);
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'shermlock', sans-serif;
+}
+
+.button-click:hover {
+    animation: bubble 2s ease-out;
+}
+
+.keyword-list {
+    color: rgb(223, 0, 0);
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'shermlock', sans-serif;
+}
+
+.site-footer {
+    background-color: #16043Bff;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    margin-right: -8px;
+    margin-left: -8px;
+    padding-bottom: 60px;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
