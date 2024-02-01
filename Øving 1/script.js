@@ -27,8 +27,54 @@ function generateSpells() {
 }
 
 function generateRandomSpells() {
-    const possibleKeywords = ['Aberto', 'Accio', 'Age Line', 'Aguamenti', 'Alarte Ascendare', 'Albus Dumbledores forceful spell', 'Alohomora', 'Anapneo', 'Anteoculatia'];
-
+    const possibleKeywords = [
+        'Accio',
+        'Aguamenti',
+        'Alohomora',
+        'Avada Kedavra',
+        'Avis',
+        'Colloportus',
+        'Confringo',
+        'Confundo',
+        'Crucio',
+        'Densaugeo',
+        'Deprimo',
+        'Depulso',
+        'Diffindo',
+        'Duro',
+        'Engorgio',
+        'Episkey',
+        'Expecto Patronum',
+        'Expelliarmus',
+        'Ferula',
+        'Fidelius Charm',
+        'Finestra',
+        'Flagrate',
+        'Impedimenta',
+        'Imperio',
+        'Impervius',
+        'Incarcerous',
+        'Incendio',
+        'Lumos',
+        'Muffliato',
+        'Nox',
+        'Obliviate',
+        'Petrificus Totalus',
+        'Protego',
+        'Reducto',
+        'Relashio',
+        'Reparo',
+        'Rictusempra',
+        'Riddikulus',
+        'Scourgify',
+        'Sectumsempra',
+        'Silencio',
+        'Stupefy',
+        'Tarantallegra',
+        'Tergeo',
+        'Unbreakable Vow',
+        'Wingardium Leviosa'
+    ];      
     const shuffledKeywords = possibleKeywords.sort(() => Math.random() - 0.5);
 
     return shuffledKeywords.slice(0, 3);
