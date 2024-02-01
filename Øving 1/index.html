@@ -1,48 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Website101</title>
+    <title>Wizsite</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header class="site-header">
+    <header class="header">
         <h1>
-            Wizsite<img src="images/wizard101.png" alt="Logo" class="logo">
+            Wizsite<img src="images/wizard101.png" alt="Logo" class="header-logo">
         </h1>
-        <link rel="stylesheet" href="styles.css">
     </header>
 
-    <nav class="site-navigation">
-        <ul class="navigation-link">
+    <nav class="navigation">
+        <ul class="nav-links">
             <li><a href="#">Hjem</a></li>
             <li><a href="#">Om oss</a></li>
             <li><a href="#">Kontakt</a></li>
         </ul>
     </nav>
 
-    <div class="flex-container">
-        <img id="image1" style.display = 'blocked' src="images/legoHarryPotter.jpeg" alt="Harry Potter Meme #1">
-        <img id="image2" src="images/harryPottermeme2.webp" alt="Harry Potter Meme #2">
-        <img id="image3" src="images/harrypottermeme3.jpeg" alt="Harry Potter Meme #3">
-        <img id="image4" src="images/harrypottermeme4.webp" alt="Harry Potter Meme #4">
-        <img id="image5" src="images/harrypottermeme5.jpeg" alt="Harry Potter Meme #5">
-        <img id="image6" src="images/harrymottermeme6.jpeg" alt="Harry Potter Meme #5">
-        <img id="image7" src="images/harrypottermeme7.jpeg" alt="Harry Potter Meme #5">
+    <div class="meme-gallery">
+        <img id="meme1" src="images/meme1.jpeg" alt="Harry Potter Meme #1">
+        <img id="meme2" src="images/meme2.webp" alt="Harry Potter Meme #2">
+        <img id="meme3" src="images/meme3.jpeg" alt="Harry Potter Meme #3">
+        <img id="meme4" src="images/meme4.webp" alt="Harry Potter Meme #4">
+        <img id="meme5" src="images/meme5.jpeg" alt="Harry Potter Meme #5">
+        <img id="meme6" src="images/meme6.jpeg" alt="Harry Potter Meme #6">
     </div>
 
-    <section class="content-block">
-        <button onclick="buttonClick()" class="button">Increment</button>
-        <h1 class="increment"><output type="text" id="inc" value="0">0</output></h1>
+    <section class="button-section">
+        <button id="incrementButton" class="button">Increment</button>
+        <h1 class="counter"><output type="text" id="counterValue" value="0">0</output></h1>
 
-        <button onclick="toggleImage()" class="button">Hide/Show</button>
-        <button onclick="generateSpells()" class="button">Give Spells</button>
-        <li id="keyword-list" class="keyword-list"></li>
+        <button id="toggleImageButton" class="button">Toggle Image</button>
+        <button id="generateSpellsButton" class="button">Generate Spells</button>
+        <ul id="spellList" class="spell-list"></ul>
     </section>
 
-    <footer class="site-footer">
+    <footer class="footer">
         <p>&copy; 2024 Andreas Kluge Svendsrud. Alle rettigheter reservert.</p>
     </footer>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

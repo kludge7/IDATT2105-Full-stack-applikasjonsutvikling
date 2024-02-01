@@ -1,74 +1,55 @@
 @import url('https://fonts.cdnfonts.com/css/shermlock');
 
-.site-header {
+body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.header {
     background-image: url(images/stars.jpeg);
     color: rgb(223, 176, 0);
     text-align: center;
-    font-size: xx-large;
+    font-size: 3vw;
     font-family: 'shermlockOpen', sans-serif;
-
-    margin-top: -8px;
-    margin-bottom: 0px;
-    margin-right: -8px;
-    margin-left: -8px;
-
-    padding-top: 20px;
-    padding-right: 0px;
-    padding-bottom: 20px;
-    padding-left: 0px;
-}
-
-.site-header, .site-navigation, .main-content, .site-footer {
+    margin-top: -1%;
+    margin-left: -1%;
+    padding: 2% 1%;
     width: 100%;
-    box-sizing: border-box;
 }
 
-
-.logo {
-    max-width: 100px;
+.header-logo {
+    max-width: 10%;
 }
 
-.site-navigation {
+.navigation {
     background-image: url(images/stars.jpeg);
-
-    margin-top: -8px;
-    margin-bottom: 0px;
-    margin-right: -8px;
-    margin-left: -8px;
-
-    padding-top: 20px;
-    padding-right: px;
-    padding-bottom: 20px;
-    padding-left: 0px;
+    margin: -2% -2%;
+    padding: 2% 0;
 }
 
-.navigation-link {
+.nav-links {
     color: rgb(0, 0, 0);
-    font-size: xx-large;
+    font-size: 2.5vw;
     font-family: 'shermlock', sans-serif;
     text-decoration: double;
-
-    margin-left: 75px; 
+    margin-left: 5%;
 }
 
-.flex-container {
-    float:right;
+.meme-gallery {
+    float: right;
     display: flex;
-    margin-top: -248px;
+    margin-top: -20%;
+    left: 22%;
     position: relative;
-    left: 318px;
 }
 
-.flex-container img {
-    max-width: 11.2%;
+.meme-gallery img {
+    max-width: 13.2%;
 }
 
-.content-block {
+.button-section {
     background-image: url(images/marioGalaxy.jpeg);
     background-size: cover;
-    margin-right: -8px;
-    margin-left: -8px;
-
+    margin: 0 -8px;
     padding: 1em;
     text-align: center;
 }
@@ -77,48 +58,41 @@
     background-color: black;
     color: rgb(223, 176, 0);
     text-align: center;
-    font-size: xx-large;
+    font-size: 3vw;
     font-family: 'shermlock', sans-serif;
 }
 
 .button:hover {
-    background-color: #45a049; 
-    cursor: pointer
+    background-color: #45a049;
+    cursor: pointer;
 }
 
-.increment {
+.counter {
     color: rgb(223, 0, 0);
     text-align: center;
-    font-size: xx-large;
+    font-size: 3vw;
     font-family: 'shermlock', sans-serif;
 }
 
-.button-click:hover {
-    animation: bubble 2s ease-out;
-}
-
-.keyword-list {
+.spell-list {
     color: rgb(223, 0, 0);
     text-align: center;
-    font-size: xx-large;
+    font-size: 3vw;
     font-family: 'shermlock', sans-serif;
 }
 
-.site-footer {
+.footer {
     background-color: #16043Bff;
     color: white;
     text-align: center;
     padding: 1em;
-    margin-right: -8px;
-    margin-left: -8px;
-    padding-bottom: 60px;
+    margin-bottom: -1%;
+    margin-left: -1%;
+    padding: 2% 1%;
+    width: 100%;
+    padding-bottom: 2%;
 }
 
-li {
+li, ul {
     list-style-type: none;
 }
-
-ul {
-    list-style-type: none;
-}
-
