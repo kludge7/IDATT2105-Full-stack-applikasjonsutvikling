@@ -141,10 +141,18 @@ export default {
           }
 
           else {
-            if (typeof this.num1 === 'undefined' || this.num1 === '') {
-              this.num1 = value;
+            if (typeof this.operator === 'undefined' || this.operator === '') {
+              if (typeof this.num1 === 'undefined' || this.num1 === '') {
+                this.num1 = value;
+              } else {
+                this.num1 += value;
+              }
             } else {
-              this.num2 = value;
+              if (typeof this.num2 === 'undefined' || this.num2 === '') {
+                this.num2 = value;
+              } else {
+                this.num2 += value;
+              }
             }
           }
 
