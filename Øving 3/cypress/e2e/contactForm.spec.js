@@ -1,7 +1,7 @@
 // cypress/integration/contactForm.spec.js
 describe('Contact Form', () => {
     beforeEach(() => {
-        cy.visit('http://localhost:5173/form');
+        cy.visit('http://localhost:5174/form');
     });
 
     it('Possible to submit with everything filled in, but impossible with email being blank', () => {
