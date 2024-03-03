@@ -1,1 +1,5 @@
+com/kludge/calculator/controller/CalculatorController.class
 com/kludge/calculator/CalculatorApplication.class
+com/kludge/calculator/repository/CalculationRepository.class
+com/kludge/calculator/entity/Calculation.class
+com/kludge/calculator/controller/CalculatorController$UserCredentials.class

@@ -1,4 +1,6 @@
-/Users/andreas/IdeaProjects/IDATT2105-Full-stack-applikasjonsutvikling/Øving 4/src/main/java/com/kludge/calculator/model/CalculationResult.java
-/Users/andreas/IdeaProjects/IDATT2105-Full-stack-applikasjonsutvikling/Øving 4/src/main/java/com/kludge/calculator/CalculatorApplication.java
-/Users/andreas/IdeaProjects/IDATT2105-Full-stack-applikasjonsutvikling/Øving 4/src/main/java/com/kludge/calculator/services/CalculatorService.java
-/Users/andreas/IdeaProjects/IDATT2105-Full-stack-applikasjonsutvikling/Øving 4/src/main/java/com/kludge/calculator/controller/CalculatorController.java
+/Users/andreas/IDATT2105-Full-stack-applikasjonsutvikling-3/Øving 5/server/src/main/java/com/kludge/calculator/entity/Calculation.java
+/Users/andreas/IDATT2105-Full-stack-applikasjonsutvikling-3/Øving 5/server/src/main/java/com/kludge/calculator/controller/CalculatorController.java
+/Users/andreas/IDATT2105-Full-stack-applikasjonsutvikling-3/Øving 5/server/src/main/java/com/kludge/calculator/services/CalculatorService.java
+/Users/andreas/IDATT2105-Full-stack-applikasjonsutvikling-3/Øving 5/server/src/main/java/com/kludge/calculator/CalculatorApplication.java
+/Users/andreas/IDATT2105-Full-stack-applikasjonsutvikling-3/Øving 5/server/src/main/java/com/kludge/calculator/repository/CalculationRepository.java
+/Users/andreas/IDATT2105-Full-stack-applikasjonsutvikling-3/Øving 5/server/src/main/java/com/kludge/calculator/model/CalculationResult.java
