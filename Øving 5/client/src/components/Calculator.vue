@@ -29,7 +29,7 @@
         <h2>Log</h2>
         <ul>
           <!-- Use v-for to loop through log in reverse order -->
-          <li v-for="(item, index) in log.slice().reverse()" :key="index">
+          <li v-for="(item, index) in log.slice().reverse()" :key="index" @click="populateDisplay(item)">
             {{ item }}
           </li>
         </ul>
@@ -50,7 +50,9 @@ export default {
     const username = ref('');
     const password = ref('');
     const display = ref('');
+    const log = ref([]);
     const logoutStatus = ref('');
+
     const buttons = [
       { value: 'AC' },
       { value: '%' },
@@ -77,71 +79,91 @@ export default {
       { value: ')' },
       { value: '=' },
       ];
-      const log = [];
 
-      function updateDisplay(value) {
-        if (value === '=') {
-          try {
-            log.push(display.value + '=' + eval(display.value));
-            return (display.value = eval(display.value));
-          } catch (SyntaxError) {
-            alert('ERROR ERROR ERROR');
-          } finally {
-            console.log('Easter egg');
-          }
-        }
-        if (value === 'AC') {
-          return (display.value = '');
-        }
-        if (value === '%') {
-          return (display.value /= 100);
-        }
-        display.value += value;
-      }
-
-      async function login() {
+      async function calculateExpression(expression) {
         try {
-          const response = await fetch('http://localhost:8080/login', {
+          const response = await fetch('http://localhost:8080/api/calculations', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-              username: username.value,
-              password: password.value,
-            }),
+            body: JSON.stringify({ expression, username: username.value }),
           });
 
-          const result = await response.text();
-
-          if (response.ok && result === 'Login successful') {
-            loggedIn.value = true;
-            log.push(result);
+          if (response.ok) {
+            const data = await response.json(); 
+            display.value = data.result;
+            if (log.value.length >= 10) {
+              // Remove the oldest item (first item in the array)
+              log.value.shift(); // This removes the first item from the array
+            }
+            log.value.push(`${expression} = ${data.result}`);
           } else {
-            alert(result);
+            alert('Failed to calculate expression');
           }
         } catch (error) {
-          console.error('Error during login:', error);
-          alert('An error occurred during login');
+          console.error('Error calculating expression:', error);
+          alert('An error occurred while calculating');
         }
       }
 
-      // Modify the logout function to communicate with the backend
-    async function logout() {
+    function updateDisplay(value) {
+      if (value === '=') {
+        if (display.value !== '') {
+          calculateExpression(display.value); 
+        }
+        return;
+      }
+      if (value === 'AC') {
+        display.value = '';
+      } else {
+        display.value += value;
+      }
+    }
+
+    async function login() {
       try {
-        const response = await fetch('http://localhost:8080/logout', {
+        const response = await fetch('http://localhost:8080/api/users/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({}),
+          body: JSON.stringify({
+            username: username.value,
+            password: password.value,
+          }),
+        });
+
+        const result = await response.text();
+
+        if (response.ok) {
+          loggedIn.value = true;
+          log.value.push(result);
+          fetchLatestCalculations();
+        } else {
+          alert(result);
+        }
+      } catch (error) {
+        console.error('Error during login:', error);
+        alert('An error occurred during login');
+      }
+    }
+
+    async function logout() {
+      try {
+        const response = await fetch('http://localhost:8080/api/users/logout', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({username: username.value}),
         });
 
         const result = await response.text();
 
         if (response.ok) {
           loggedIn.value = false;
-          log.push(result);
+          log.value.push(result);
           logoutStatus.value = 'User logged out successfully.';
         } else {
           logoutStatus.value = result;
@@ -151,6 +173,32 @@ export default {
         logoutStatus.value = 'An error occurred during logout';
       }
     }
+
+    async function fetchLatestCalculations() {
+      try {
+        const response = await fetch(`http://localhost:8080/api/calculations/latest?username=${encodeURIComponent(username.value)}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+        if (response.ok) {
+          const calculations = await response.json();
+          log.value = calculations.map(calc => `${calc.expression} = ${calc.result}`);
+        } else {
+          console.error('Failed to fetch latest calculations');
+        }
+      } catch (error) {
+        console.error('Error fetching latest calculations:', error);
+      }
+    }
+
+    function populateDisplay(item) {
+      const expression = item.split(' = ')[0]; 
+      display.value = expression;
+    }
+
 
     return {
       loggedIn,
@@ -162,6 +210,9 @@ export default {
       updateDisplay,
       login,
       logout,
+      logoutStatus,
+      fetchLatestCalculations,
+      populateDisplay
     };
   },
 };

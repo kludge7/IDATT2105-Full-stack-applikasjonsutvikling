@@ -1,1 +1,5 @@
-com/kludge/calculator/CalculatorApplicationTests.class
+com/kludge/calculation/controller/CalculationControllerTests.class
+com/kludge/calculation/CalculationApplicationTests.class
+com/kludge/calculation/services/CalculationServiceTest.class
+com/kludge/calculation/controller/UserControllerTest.class
+com/kludge/calculation/services/UserServiceTest.class
