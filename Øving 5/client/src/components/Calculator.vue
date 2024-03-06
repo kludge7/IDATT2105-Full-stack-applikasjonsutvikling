@@ -94,8 +94,7 @@ export default {
             const data = await response.json(); 
             display.value = data.result;
             if (log.value.length >= 10) {
-              // Remove the oldest item (first item in the array)
-              log.value.shift(); // This removes the first item from the array
+              log.value.shift(); 
             }
             log.value.push(`${expression} = ${data.result}`);
           } else {
@@ -313,5 +312,6 @@ export default {
 
   .logout-button:hover {
     background-color: #c9302c;
+    transform: translateY(-7px);
   }
 </style>

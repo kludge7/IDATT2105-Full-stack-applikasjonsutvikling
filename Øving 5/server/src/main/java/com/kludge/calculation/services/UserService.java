@@ -1,15 +1,12 @@
 package com.kludge.calculation.services;
 
-import java.util.Optional;
-
 import org.springframework.stereotype.Service;
 
 import com.kludge.calculation.model.User;
 import com.kludge.calculation.repository.UserRepository;
 
-import java.util.Collections;
-import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Service class for managing users.
@@ -20,7 +17,7 @@ public class UserService {
     private final UserRepository userRepository;
 
     // Keeping track of who is already logged in
-    private final Set<String> activeSessions = Collections.newSetFromMap(new ConcurrentHashMap<>());
+    private final List<String> activeSessions = new ArrayList<>();
 
     /**
      * Class constructor.
@@ -34,14 +31,6 @@ public class UserService {
      */
     public User findByUsername(String username) {
         return userRepository.findByUsername(username).orElse(null);
-    }
-
-    /**
-     * Find a User by their ID.
-     */
-    @SuppressWarnings("null")
-    public Optional<User> findById(Long id) {
-        return userRepository.findById(id);
     }
 
     /**

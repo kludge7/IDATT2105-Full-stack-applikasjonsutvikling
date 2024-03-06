@@ -63,19 +63,8 @@ public class CalculationService {
     }
 
     /**
-     * Retrieves all calculation entities.
+     * Get the 10 latest calculations made my a certain user
      */
-    public List<CalculationDto> getAllCalculations() {
-        return calculationRepository.findAll().stream().map(calculation -> {
-            CalculationDto dto = new CalculationDto();
-            dto.setId(calculation.getId());
-            dto.setExpression(calculation.getExpression());
-            dto.setResult(calculation.getResult());
-            dto.setUser(calculation.getUser());
-            return dto;
-        }).collect(Collectors.toList());
-    }
-
     public List<CalculationDto> getLatestCalculations(String username) {
         return calculationRepository.findTop10ByUser_IdOrderByIdDesc((userService.findByUsername(username).getId())).stream().map(calculation -> {
             CalculationDto dto = new CalculationDto();

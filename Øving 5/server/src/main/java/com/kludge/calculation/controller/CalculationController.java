@@ -34,13 +34,8 @@ public class CalculationController {
     }
 
     /**
-     * Retrieves all calculations.
+     * Get the 10 latest calculations made my a certain user
      */
-    @GetMapping
-    public List<CalculationDto> getAllCalculations() {
-        return calculationService.getAllCalculations();
-    }
-
     @GetMapping("/latest")
     public List<CalculationDto> getLatestCalculations(@RequestParam String username) {
         return calculationService.getLatestCalculations(username);

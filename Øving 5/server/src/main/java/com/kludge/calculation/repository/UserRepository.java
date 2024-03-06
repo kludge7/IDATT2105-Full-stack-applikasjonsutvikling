@@ -8,7 +8,6 @@ import java.util.Optional;
  * Repository interface for User entities.
  */
 public interface UserRepository extends JpaRepository<User, Long> {
-
     /**
      * Finds a user by their username.
      */
