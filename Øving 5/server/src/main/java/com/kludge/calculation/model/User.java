@@ -8,10 +8,6 @@ import jakarta.persistence.OneToMany;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Entity model representing a user in the system.
- * It includes user details such as username and password, along with a collection of calculations associated with the user.
- */
 @Entity
 public class User {
     @Id
@@ -23,6 +19,16 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private Set<Calculation> calculations = new HashSet<>();
+
+    // Constructor that accepts username and password
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    // Default constructor is required by JPA
+    public User() {
+    }
 
     // Standard getters and setters
     public Long getId() {

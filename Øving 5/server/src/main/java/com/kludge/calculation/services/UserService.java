@@ -56,4 +56,9 @@ public class UserService {
     public void logout(String username) {
         activeSessions.remove(username);
     }
+    
+    @SuppressWarnings("null")
+    public User save(User user) {
+        return userRepository.save(user);
+    }
 }

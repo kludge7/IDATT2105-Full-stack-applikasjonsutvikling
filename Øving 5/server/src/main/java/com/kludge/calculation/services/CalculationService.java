@@ -36,7 +36,7 @@ public class CalculationService {
         ScriptEngineManager mgr = new ScriptEngineManager();
         ScriptEngine engine = mgr.getEngineByName("graal.js"); 
         if (engine == null) {
-            throw new IllegalStateException("JavaScript engine not found");
+            throw new IllegalStateException("Engine not found");
         }
         try {
             return ((Number) engine.eval(expression)).doubleValue();
@@ -56,9 +56,9 @@ public class CalculationService {
         calculation.setResult(evaluateExpression(calculationDto.getExpression()));
         calculation.setUser(userService.findByUsername(calculationDto.getUsername()));
     
-        Calculation savedCalculation = calculationRepository.save(calculation);
-        calculationDto.setId(savedCalculation.getId());
-        calculationDto.setResult(savedCalculation.getResult());
+        calculationRepository.save(calculation);
+        calculationDto.setId(calculation.getId());
+        calculationDto.setResult(calculation.getResult());
         return calculationDto;
     }
 

@@ -1,11 +1,10 @@
 com/kludge/calculation/dto/CalculationDto.class
 com/kludge/calculation/model/Calculation.class
-com/kludge/calculation/services/CalculationService.class
 com/kludge/calculation/services/UserService.class
 com/kludge/calculation/model/User.class
 com/kludge/calculation/repository/CalculationRepository.class
 com/kludge/calculation/controller/CalculationController.class
 com/kludge/calculation/repository/UserRepository.class
-com/kludge/calculation/dto/UserDto.class
 com/kludge/calculation/CalculationApplication.class
-com/kludge/calculation/controller/UserController.class
+com/kludge/calculation/services/CalculationService.class
+com/kludge/calculation/dto/UserDto.class
